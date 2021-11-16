@@ -17,7 +17,7 @@ function FilmsView() {
   useEffect(() => {
     setIsLoading(true);
     api
-      .getImages(page)
+      .getTrendingMovies(page)
       .then(({ data }) => {
         setFilm((prevFilm) => [...prevFilm, ...mapper(data.results)]);
       })
