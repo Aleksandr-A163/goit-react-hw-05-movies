@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
-import { FilmList, FilmListItem, Image, Title } from "./Gallery.styled";
+import {  FilmList, FilmListItem, Image, Title } from "./Gallery.styled";
 
-const FilmGallery = ({ films, onClickImg }) => {
+const HomeGallery = ({ films, onClickImg }) => {
   if (films.length === 0) return null;
   return (
+
     <FilmList>
       {films.map(({ id, img, title, text }) => (
         <FilmListItem key={id}>
@@ -17,11 +18,13 @@ const FilmGallery = ({ films, onClickImg }) => {
         </FilmListItem>
       ))}
     </FilmList>
+
+
   );
 };
 
-FilmGallery.propTypes = {
+HomeGallery.propTypes = {
   films: PropTypes.array.isRequired,
 };
 
-export default FilmGallery;
+export default HomeGallery;

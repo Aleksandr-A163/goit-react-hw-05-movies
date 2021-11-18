@@ -1,7 +1,8 @@
 import LoaderSpinner from "react-loader-spinner";
+import s from './Loader.module.css';
 
 const Loader = () => (
-  <div>
+  <div className={s.loaderBox}>
     <LoaderSpinner
       type="ThreeDots"
       color="pink"

@@ -6,14 +6,15 @@
   display: inline-block;
   text-decoration: none;
   margin: 4px;
+  padding-right: 20px;
   font-weight: 500;
-  color: #8ca87c;
+  color: #e4eede;
   font-size: 20px;
 }
 
 .activeLink {
   composes: link;
-  color: #6c855e;
+  color: #615e85;
 }
 
 .header {
@@ -21,13 +22,12 @@
   top: 0;
   left: 0;
   padding: 8px 36px;
-  z-index: 1100;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 48px;
-  background-color: #afc7a1;
-  border-bottom: 2px solid #6c855e;
+  background-color: #2b195a;
+  border-bottom: 2px solid #2a2563;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }

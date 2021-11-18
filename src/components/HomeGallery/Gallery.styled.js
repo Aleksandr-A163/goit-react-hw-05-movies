@@ -32,4 +32,6 @@ const Image = styled.img`
   max-width: 100%;
 `;
 
+
+
 export { FilmList, FilmListItem, Image, Title };

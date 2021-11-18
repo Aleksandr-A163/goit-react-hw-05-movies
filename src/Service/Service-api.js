@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const BASE_URL = "https://api.themoviedb.org/3/trending/movie/day";
+const BASE_URL = "https://api.themoviedb.org/3/";
 const API_KEY = "367b0facb69c6afab44aa6f928a1cec5";
 
 export const getTrendingMovies = (page) =>
-  axios.get(`${BASE_URL}trending/movie/day?page=${page}&api_key=${API_KEY}`);
+  axios.get(`${BASE_URL}trending/movie/day?api_key=${API_KEY}&page=${page}`);
 
 export const getMovie = (searchQuery, page) =>
   axios.get(`${BASE_URL}search/movie?api_key=${API_KEY}&page=${page}&query=${searchQuery}&include_adult=false`);

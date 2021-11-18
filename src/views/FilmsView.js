@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 
 import * as api from "../Service/Service-api";
 import mapper from "../helpers/Mapper";
-import FilmGallery from "../components/filmGallery/FilmGallery";
-import Button from "../components/button/Button";
-import Loader from "../components/loader/Loader";
-import Modal from "../components/modal/Modal";
+import HomeGallery from "../components/HomeGallery/HomeGallery";
+import Button from "../components/Button/Button";
+import Loader from "../components/Loader/Loader";
+import Modal from "../components/Modal/Modal";
+import "../index.css"
 
 function FilmsView() {
   const [page, setPage] = useState(1);
@@ -47,12 +48,15 @@ function FilmsView() {
     setImg("");
   };
   return (
-    <div>
-      <FilmGallery films={film} onClickImg={openModal}></FilmGallery>
-      <Button onClick={onLoadMore} />
-      {isLoading && <Loader />}
-      {img && <Modal closeModal={closeModal} modalImg={img} />}
-    </div>
+    <>
+      <section>
+        <HomeGallery films={film} onClickImg={openModal}></HomeGallery>
+      
+        {isLoading && <Loader />}
+        {img && <Modal closeModal={closeModal} modalImg={img} />}
+      </section>
+        <Button onClick={onLoadMore} />
+    </>
   );
 }
 
