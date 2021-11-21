@@ -8,8 +8,7 @@ import s from './SearchMovie.module.css';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 import * as api from '../../Service/Service-api';
-// import movieApiService from '../../Service/Service-api';
-// import infiniteScroll from '../../services/infinite-scroll-service';
+import infiniteScroll from '../../Service/infinite-scroll-service';
 import Loader from '../Loader/Loader';
 // import NoImage from '../../images/NoImage.PNG'
 
@@ -101,11 +100,11 @@ function SearchMovie() {
         nextFetch();
     }, [page, location]);
 
-    // endless Scroll
+    // бесконечный скрол
 
-    // useEffect(() => {
-    //     infiniteScroll(searchMovieArr, 600, 0.2, () => setPage(prevState => prevState + 1));
-    // }, [searchMovieArr]);
+    useEffect(() => {
+        infiniteScroll(searchMovieArr, 600, 0.2, () => setPage(prevState => prevState + 1));
+    }, [searchMovieArr]);
 
     return (
     <>

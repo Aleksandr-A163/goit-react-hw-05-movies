@@ -1,11 +1,11 @@
 import { lazy, Suspense } from 'react'
 import { Route, Switch, Redirect } from "react-router-dom";
 import Navigation from './components/Navigation/Navigation'
-import FilmsView from "./views/FilmsView";
-import FilmDetails from "./views/FilmDetails";
 import Loader from './components/Loader/Loader';
 
 const SearchFilms = lazy(() => import('./views/SearchMovie'));
+const HomeView = lazy(() => import('./views/FilmsView'));
+const FilmView = lazy(() => import('./views/FilmDetails'));
 
 function App() {
   return (
@@ -14,18 +14,21 @@ function App() {
       <Suspense fallback={<Loader />}>
       <Switch >
           <Route path="/home" exact>
-            <FilmsView />
+            <HomeView />
           </Route>
-          <Route path="/films/:filmId">
-            <FilmDetails />
+          <Route path='/home/:movieId'>
+              <FilmView/>
           </Route>
-          <Route path="/films" exact>
+          <Route path="/movies/:movieId">
+            <FilmView />
+          </Route>
+          <Route path="/movies" exact>
             <SearchFilms/>
           </Route>
-          <Route path="/films/:filmId">
-            <FilmsView/>
-          </Route>
-        <Redirect from="/" to="/films" />
+
+          <Redirect to='/home'>
+              <HomeView/>
+          </Redirect>
       </Switch>
       </Suspense>
   </>
