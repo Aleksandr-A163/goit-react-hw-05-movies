@@ -82,9 +82,12 @@ export default function SingleMovie() {
                                 <p className={s.filmTextValue}>{film.data.genres.map(items => items.name).join(', ').toLowerCase()}</p>
                                 <h4 className={s.filmText}>Vote average:</h4>
                                 <p className={s.filmTextValue}>{film.data.vote_average}</p>
+                                <div className={s.Links}>
                                 <h4 className={s.filmText}>Additional information:</h4>
-                                <NavLink to={`${url}/cast/${movieId}`} className={s.FilmLink}>cast</NavLink>
-                                <NavLink to={`${url}/reviews/${movieId}`} className={s.FilmLink}>reviews</NavLink>
+                                    <NavLink to={`${url}/cast/${movieId}`} className={s.FilmLink}>CAST</NavLink>
+                                    <NavLink to={`${url}/reviews/${movieId}`} className={s.FilmLink}>REVIEWS</NavLink>
+                                </div>
+                                
                             </div>
                         </div>
                     )}
