@@ -4,24 +4,24 @@
   list-style: none;
   margin-left: auto;
   margin-right: auto;
-  border-top: 1px solid #8ca87c;
+  border-top: 1px solid #5a537a;
 }
 
 .ReviewsListItem {
   padding: 16px 0;
-  border-bottom: 1px solid #8ca87c;
+  border-bottom: 1px solid #5a537a;
 }
 
 .ReviewsAuthorTitle {
   font-size: 16px;
   font-weight: 700;
-  color: #617a53;
+  color: #5a537a;
 }
 
 .ReviewsAuthor {
   font-size: 16px;
   font-weight: 500;
-  color: #617a53;
+  color: #5a537a;
 }
 
 .ReviewsContent {
@@ -30,7 +30,7 @@
   font-size: 14px;
   font-weight: 400;
   font-style: italic;
-  color: #617a53;
+  color: #5a537a;
 }
 
 .ReviewsCreated {
@@ -39,5 +39,5 @@
   font-size: 12px;
   font-weight: 500;
   font-style: italic;
-  color: #617a53;
+  color: #5a537a;
 }

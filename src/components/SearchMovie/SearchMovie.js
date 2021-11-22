@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import * as api from '../../Service/Service-api';
 import infiniteScroll from '../../Service/infinite-scroll-service';
 import Loader from '../Loader/Loader';
-// import NoImage from '../../images/NoImage.PNG'
+import NoImage from '../../images/no-poster-s.jpg'
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w300';
 
@@ -87,7 +87,6 @@ function SearchMovie() {
             let newRequest;
             try {
                 newRequest = await api.getMovie(newQuery, page);
-                // newRequest = await movieApiService.fetchMovie(newQuery, page);
                 if (newRequest.data.results.length === 0) return;
                 setSearchMovieArr(prevState => [...prevState, ...newRequest.data.results]);
                 setTotalMovie(newRequest.data.total_results);
@@ -141,7 +140,7 @@ function SearchMovie() {
             <>
                 <ul id="search-gallery" className={s.SearchList}>
                     {searchMovieArr.map(item => {
-                        const { id, backdrop_path, title, release_date } = item;
+                        const { id, backdrop_path, title,  vote_average } = item;
                         return (
                             <li key={id}  id={id}>
                                 <Link
@@ -151,9 +150,9 @@ function SearchMovie() {
                                     }}   
                                     className={s.SearchListItem} >
                                 {backdrop_path && <img src={`${BASE_IMG_URL}${backdrop_path}`} alt={title} className={s.SearchListItemImage} />}
-                                {/* {!backdrop_path && <img src={NoImage} alt="NoImage" />} */}
-                                <span className={s.SearchedMovieTitle}>{title}</span>
-                                <span className={s.SearchedMovieTitle}>relised: {release_date}</span>
+                                {!backdrop_path && <img src={NoImage} alt="NoImage" className={s.SearchListItemImage} />}
+                                    <span className={s.SearchedMovieTitle}>{title}</span>
+                                    <span className={s.SearchedMovieTitle}>Raiting: {vote_average}</span>
                                 </Link>
                             </li>
                         );

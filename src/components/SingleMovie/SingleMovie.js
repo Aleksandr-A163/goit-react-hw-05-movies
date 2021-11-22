@@ -10,7 +10,7 @@ import { IoArrowBackSharp } from "react-icons/io5";
 
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w342';
-let prevLocation = null;
+
 
 export default function SingleMovie() {
     const history = useHistory();
@@ -20,14 +20,7 @@ export default function SingleMovie() {
     const [film, setFilm] = useState(null);
     const [status, setStatus] = useState('pending');
 
-    
     useEffect(() => {
-        if (!location.state) return;
-        prevLocation = location.state.from;
-    },[])
-
-    useEffect(() => {
-        
 
         async function fetchData() {
         setStatus('pending');
@@ -50,15 +43,14 @@ export default function SingleMovie() {
         };
 
         fetchData();
-        // const {backdrop_path, title, release_date, genres, overview, vote_average, vote_count} = film.data	
     }, [movieId]);
 
     const handleGoBack = () => {
-        const { pathname, search } = prevLocation;
-        history.push({
-            pathname: pathname,
-            search: search,
-        });
+    if (location.state?.from.location) {
+      history.push(location.state.from.location);
+      return;
+    }
+    history.push(location?.state?.from ?? '/'); 
     };
     
     return (

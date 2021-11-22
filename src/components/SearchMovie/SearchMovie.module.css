@@ -2,14 +2,20 @@
  * Стили компонента Searchbar
  */
 .Searchbar {
+  color: #2f1c47;
+  top: 0;
+  left: 0;
+  z-index: 1100;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
-  padding: 4px;
-  color: #2f1c47;
-  /* box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); */
+  min-height: 64px;
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
 .SearchTitle {
@@ -29,8 +35,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 28px;
-  height: 28px;
+  width: 38px;
+  height: 38px;
   border: solid 1px #2f1c47;
   cursor: pointer;
   outline: none;
@@ -51,21 +57,20 @@
 }
 
 .SearchFormInput {
-  max-width: 800px;
-  height: 28px;
-  font-size: 16px;
+  height: 38px;
+  font-size: 26px;
   border: none;
   outline: none;
   padding-left: 8px;
   padding-right: 8px;
   padding-bottom: 4px;
-  /* border-left: 1px solid #dadada; */
   border-radius: 0 4px 4px 0;
   color: #4a1c53;
   background-color: #d5bdf3;
   box-shadow: inset 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     inset 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
     inset 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  width: 600px;
 }
 
 .SearchList {
@@ -88,15 +93,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 4px 16px;
-  border-top: 1px solid #617a53;
+  border-top: 1px solid #131212;
 }
 
 .SearchListItemImage {
-  width: 100px;
+  height: 120px;
+  width: 200px;
 }
 
 .SearchedMovieTitle {
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 600;
   color: #351a5f;
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import {useParams} from "react-router-dom";
 import * as api from "../../Service/Service-api";
 import s from './Cast.module.css';
-// import NoImage154 from '../../images/NoImage154.PNG';
+import NoImage154 from '../../images/no-avatar.jpg';
 import Loader from "../Loader/Loader";
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w154';
@@ -53,7 +53,7 @@ export default function Cast() {
                                 return (
                                     <li key={id} className={s.castGalleryItem}>
                                         {profile_path && <img src={`${BASE_IMG_URL}${profile_path}`} alt={name} className={s.CastGalleryItemImage}/>}
-                                        {/* {!profile_path && <img src={NoImage154} alt="NoImage" />} */}
+                                        {!profile_path && <img src={NoImage154} alt="NoImage" className={s.CastGalleryItemImage}/>}
                                         <h5 className={s.CastTitle}>{name}</h5>
                                     </li>
                             )})}
