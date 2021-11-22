@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Route, Switch, Redirect } from "react-router-dom";
 import Navigation from './components/Navigation/Navigation'
 import Loader from './components/Loader/Loader';
+import ToTopButton from './components/ToTopButton/ToTopButton';
 
 const SearchFilms = lazy(() => import('./views/SearchMovie'));
 const HomeView = lazy(() => import('./views/FilmsView'));
@@ -31,6 +32,8 @@ function App() {
           </Redirect>
       </Switch>
       </Suspense>
+
+      <ToTopButton/>
   </>
   );
 }

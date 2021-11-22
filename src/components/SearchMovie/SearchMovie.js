@@ -108,7 +108,6 @@ function SearchMovie() {
     return (
     <>
         <div className={s.Searchbar} >
-            <span className={s.SearchTitle}>Search:</span>
             <form className={s.SearchForm} onSubmit={handleSubmit}>
                 <button type="submit" className={s.SearchFormButton}>
                     <ImSearch />
