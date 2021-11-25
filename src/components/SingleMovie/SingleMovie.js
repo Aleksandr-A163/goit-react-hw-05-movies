@@ -46,11 +46,11 @@ export default function SingleMovie() {
     }, [movieId]);
 
     const handleGoBack = () => {
-    if (location.state?.from.location) {
-      history.push(location.state.from.location);
-      return;
-    }
-    history.push(location?.state?.from ?? '/'); 
+
+
+
+      history.push(location?.state?.from ?? "/");
+
     };
     
     return (
@@ -84,18 +84,18 @@ export default function SingleMovie() {
                                 <p className={s.filmTextValue}>{film.data.vote_average}</p>
                                 <div className={s.Links}>
                                 <h4 className={s.filmText}>Additional information:</h4>
-                                    <NavLink to={`${url}/cast/${movieId}`} className={s.FilmLink}>CAST</NavLink>
-                                    <NavLink to={`${url}/reviews/${movieId}`} className={s.FilmLink}>REVIEWS</NavLink>
+                                    <NavLink to={{ pathname: `${url}/cast/${movieId}`, state: {from: location?.state?.from ?? "/"} }} className={s.FilmLink}>CAST</NavLink>
+                                    <NavLink to={{ pathname: `${url}/reviews/${movieId}`, state: {from: location?.state?.from ?? "/"} }} className={s.FilmLink}>REVIEWS</NavLink>
                                 </div>
                                 
                             </div>
                         </div>
                     )}
                     <Route path={`${url}/cast/:movieId`}>
-                        <Cast />
+                        <Cast movieId={movieId}/>
                     </Route>
                     <Route path={`${url}/reviews/:movieId`}>
-                        <Reviews/>
+                        <Reviews movieId={movieId} />
                     </Route>
                 </>
             )}
