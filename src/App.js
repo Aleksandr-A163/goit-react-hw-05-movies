@@ -17,6 +17,9 @@ function App() {
           <Route path="/home" exact>
             <HomeView />
           </Route>
+          <Route path='/home/:movieId'>
+              <FilmView/>
+          </Route>
           <Route path="/movies/:movieId">
             <FilmView />
           </Route>
